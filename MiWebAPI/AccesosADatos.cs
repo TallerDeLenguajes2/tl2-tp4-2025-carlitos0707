@@ -11,11 +11,11 @@ namespace Lector
 
     public interface IAccesoADatos
     {
-        List<Cadeteria>? AbrirCadeteria(string nombreArchivo);
+        List<Cadeteria> AbrirCadeteria(string nombreArchivo);
 
-        List<Cadete>? AbrirCadetes(string nombreArchivo);
+        List<Cadete> AbrirCadetes(string nombreArchivo);
 
-        List<Pedido>? AbrirPedidos(string nombreArchivo);
+        List<Pedido> AbrirPedidos(string nombreArchivo);
         void GuardarArchivoTexto(string nombreArchivo,List<Cadeteria> cadeterias);
         void GuardarArchivoTexto(string nombreArchivo, List<Cadete> cadetes);
         void GuardarArchivoTexto(string nombreArchivo, List<Pedido> pedidos);
@@ -39,24 +39,24 @@ namespace Lector
 
             return LecturaDelArchivo;
         }
-        public List<Cadeteria>? AbrirCadeteria(string nombreDeArchivo)
+        public List<Cadeteria> AbrirCadeteria(string nombreDeArchivo)
         {
             List<string[]> LecturaDelArchivo = abrirCsv(nombreDeArchivo);
-            List<Cadeteria>? cadeterias = Cadeterias(LecturaDelArchivo);
+            List<Cadeteria> cadeterias = Cadeterias(LecturaDelArchivo);
             return cadeterias;
         }
 
 
-        public List<Cadete>? AbrirCadetes(string nombreArchivo)
+        public List<Cadete> AbrirCadetes(string nombreArchivo)
         {
             List<string[]> stringCadetes = abrirCsv(nombreArchivo);
 
-            List<Cadete>? cadetes = Cadetes(stringCadetes);
+            List<Cadete> cadetes = Cadetes(stringCadetes);
 
             return cadetes;
         }
 
-        List<Cadeteria>? Cadeterias(List<string[]> stringCadeterias)
+        List<Cadeteria> Cadeterias(List<string[]> stringCadeterias)
         {
             List<Cadeteria> cadeterias = new List<Cadeteria>();
             foreach (string[] stringCadeteria in stringCadeterias)
@@ -69,7 +69,7 @@ namespace Lector
             return cadeterias;
         }
 
-        List<Cadete>? Cadetes(List<string[]> stringCadetes)
+        List<Cadete> Cadetes(List<string[]> stringCadetes)
         {
             List<Cadete> cadetes = new List<Cadete>();
             foreach (string[] stringCadete in stringCadetes)
@@ -80,7 +80,7 @@ namespace Lector
             return cadetes;
         }
 
-        public List<Pedido>? AbrirPedidos(string nombreArchivo)
+        public List<Pedido> AbrirPedidos(string nombreArchivo)
         {
             List<Pedido> pedidos = new List<Pedido>();
 
@@ -161,21 +161,21 @@ namespace Lector
 
 
 
-        public List<Cadeteria>? AbrirCadeteria(string nombreArchivo)
+        public List<Cadeteria> AbrirCadeteria(string nombreArchivo)
         {
             string jsonString = AbrirArchivoTexto(nombreArchivo);
-            List<Cadeteria>? cadeterias = JsonSerializer.Deserialize<List<Cadeteria>>(jsonString);
+            List<Cadeteria> cadeterias = JsonSerializer.Deserialize<List<Cadeteria>>(jsonString);
             return cadeterias;
         }
 
-        public List<Cadete>? AbrirCadetes(string nombreArchivo)
+        public List<Cadete> AbrirCadetes(string nombreArchivo)
         {
             string jsonString = AbrirArchivoTexto(nombreArchivo);
-            List<Cadete>? cadetes = JsonSerializer.Deserialize<List<Cadete>>(jsonString);
+            List<Cadete> cadetes = JsonSerializer.Deserialize<List<Cadete>>(jsonString);
             return cadetes;
         }
 
-        public List<Pedido>? AbrirPedidos(string nombreArchivo)
+        public List<Pedido> AbrirPedidos(string nombreArchivo)
         {
             List<Pedido> pedidos = new List<Pedido>();
 

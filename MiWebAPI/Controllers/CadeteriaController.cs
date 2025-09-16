@@ -31,7 +31,7 @@ public class CadeteriaController : ControllerBase
     }
 
     [HttpPost("AgregarPedido")]
-    public IActionResult AgregarPedido(Pedido? pedido)
+    public IActionResult AgregarPedido(Pedido pedido)
     {
         if (pedido == null)
         {
