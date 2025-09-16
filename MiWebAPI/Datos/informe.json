@@ -1,0 +1,56 @@
+{
+    "Cadeteria": {
+        "Nombre": "Cadetería Tucumán",
+        "Telefono": 3811234567
+    },
+    "Cadetes": [
+        {
+            "Id": 1,
+            "Nombre": "Juan Pérez",
+            "PedidosEntregados": 2,
+            "MontoGanado": 1000
+        },
+        {
+            "Id": 2,
+            "Nombre": "María López",
+            "PedidosEntregados": 1,
+            "MontoGanado": 500
+        },
+        {
+            "Id": 3,
+            "Nombre": "Carlos Gómez",
+            "PedidosEntregados": 0,
+            "MontoGanado": 0
+        }
+    ],
+    "PedidosCompletados": [
+        {
+            "Nro": 101,
+            "Obs": "Entregar en portería",
+            "Cliente": "Ana Torres",
+            "Cadete": "Juan Pérez"
+        },
+        {
+            "Nro": 103,
+            "Obs": "Entrega rápida por favor",
+            "Cliente": "Carolina Díaz",
+            "Cadete": "Juan Pérez"
+        },
+        {
+            "Nro": 102,
+            "Obs": "Llamar antes de entregar",
+            "Cliente": "Luis Martínez",
+            "Cadete": "María López"
+        }
+    ],
+    "Sueldos": {
+        "Juan Pérez": 1000,
+        "María López": 500,
+        "Carlos Gómez": 0
+    },
+    "Totales": {
+        "TotalPedidosEntregados": 3,
+        "TotalRecaudado": 1500,
+        "PromedioPorCadete": 1.0
+    }
+}

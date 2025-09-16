@@ -1,0 +1,20 @@
+[
+    {
+        "Id": 1,
+        "Nombre": "Juan Pérez",
+        "Direccion": "Av. Siempre Viva 123",
+        "Telefono": 3811111111
+    },
+    {
+        "Id": 2,
+        "Nombre": "María López",
+        "Direccion": "Calle San Martín 456",
+        "Telefono": 3812222222
+    },
+    {
+        "Id": 3,
+        "Nombre": "Carlos Gómez",
+        "Direccion": "Belgrano 789",
+        "Telefono": 3813333333
+    }
+]
