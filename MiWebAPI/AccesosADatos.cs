@@ -177,9 +177,15 @@ namespace Lector
 
         public List<Pedido> AbrirPedidos(string nombreArchivo)
         {
-            List<Pedido> pedidos = new List<Pedido>();
-
+            string jsonString = AbrirArchivoTexto(nombreArchivo);
+            List<Pedido> pedidos = JsonSerializer.Deserialize<List<Pedido>>(jsonString);
             return pedidos;
+        }
+        public List<Informe> AbrirInformes(string nombreArchivo)
+        {
+            string jsonString = AbrirArchivoTexto(nombreArchivo);
+            List<Informe> informes = JsonSerializer.Deserialize<List<Informe>>(jsonString);
+            return informes;
         }
         public void GuardarArchivoTexto(string nombreArchivo, List<Cadeteria> cadeterias)
         {

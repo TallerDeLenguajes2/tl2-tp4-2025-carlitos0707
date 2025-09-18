@@ -8,12 +8,15 @@ public class Pedido
     Cliente cliente;
     Cadete cadete;
     bool entregado;
-    public int Nro { get => nro; }
+    public int Nro { get => nro; set => nro = value; }
     public bool Entregado { get => entregado; set => entregado = value; }
     public string Obs { get => obs; set => obs = value; }
     public Cliente Cliente { get => cliente; set => cliente = value; }
     public Cadete Cadete { get => cadete; set => cadete = value; }
-
+    public Pedido()
+        {
+            
+        }
     public Pedido(int nro, string obs, string nombreCliente, string direccion, int telefono, string datosReferenciaDireccion, bool entregado)
     {
         this.cliente = new Cliente(nombreCliente, direccion, telefono, datosReferenciaDireccion);
@@ -21,10 +24,7 @@ public class Pedido
         this.nro = nro;
         this.obs = obs;
     }
-    public Pedido()
-    {
-        
-    }
+    
 }
 
 
@@ -32,14 +32,18 @@ public class Cliente
 {
     string nombre;
     string direccion;
-    int telefono;
+    long telefono;
     string datosReferenciaDireccion;
 
     public string Nombre { get => nombre; set => nombre = value; }
     public string Direccion { get => direccion; set => direccion = value; }
-    public int Telefono { get => telefono; set => telefono = value; }
+    public long Telefono { get => telefono; set => telefono = value; }
     public string DatosReferenciaDireccion { get => datosReferenciaDireccion; set => datosReferenciaDireccion = value; }
 
+    public Cliente()
+    {
+        
+    }
     public Cliente(string nombre, string direccion, int telefono, string datosReferenciaDireccion)
     {
         this.DatosReferenciaDireccion = datosReferenciaDireccion;
@@ -66,12 +70,16 @@ public class Cadete
     int id;
     string nombre;
     string direccion;
-    int telefono;
-    public int Id { get => id; }
+    long telefono;
+    public int Id { get => id; set => id = value; }
     public string Nombre { get => nombre; set => nombre = value; }
     public string Direccion { get => direccion; set => direccion = value; }
-    public int Telefono { get => telefono; set => telefono = value; }
+    public long Telefono { get => telefono; set => telefono = value; }
 
+    public Cadete()
+    {
+        
+    }
     public Cadete(int id, string nombre, string direccion, int telefono)
     {
         this.id = id;
@@ -86,14 +94,18 @@ public class Cadete
 public class Cadeteria
 {
     string nombre;
-    int telefono;
+    long telefono;
     List<Cadete> listadoCadetes;
     List<Pedido> listadoPedidos;
     public List<Cadete> ListadoCadetes { get => listadoCadetes; set => listadoCadetes = value; }
-    public string Nombre { get => nombre; }
-    public int Telefono { get => telefono; }
+    public string Nombre { get => nombre; set => nombre = value; }
+    public long Telefono { get => telefono; set => telefono = value; }
     public List<Pedido> ListadoPedidos { get => listadoPedidos; set => listadoPedidos = value; }
 
+    public Cadeteria()
+    {
+        
+    }
     public Cadeteria(string nombre, int telefono)
     {
         this.nombre = nombre;
