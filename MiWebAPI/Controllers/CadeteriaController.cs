@@ -9,12 +9,23 @@ namespace MiWebAPI.Controllers;
 [Route("[controller]")]
 public class CadeteriaController : ControllerBase
 {
-    static AccesoADatosJson lector = new AccesoADatosJson();
+    private accesoDatosCadeteria ADCadeteria;
+    private accesoDatosCadetes ADCadetes;
+    private accesoDatosPedidos ADPedidos;
+    private accsesoDatosInforme ADInforme;
+
+    public CadeteriaController()
+    {
+        ADCadeteria = new accesoDatosCadeteria();
+        ADCadetes = new accesoDatosCadetes();
+        ADPedidos = new accesoDatosPedidos();
+        ADInforme = new accsesoDatosInforme();
+    }
 
     [HttpGet("Pedidos")]
     public IActionResult GetPedidos()
     {
-        List<Pedido> pedidos = lector.AbrirPedidos("Datos/pedidos.json");
+        List<Pedido> pedidos = ADPedidos.Obtener();
         return Ok(pedidos);
     }
 
@@ -22,15 +33,15 @@ public class CadeteriaController : ControllerBase
     [HttpGet("Cadetes")]
     public IActionResult GetCadetes()
     {
-        List<Cadete> cadetes = lector.AbrirCadetes("Datos/cadetes.json");
+        List<Cadete> cadetes = ADCadetes.Obtener();
         return Ok(cadetes);
     }
 
     [HttpGet("Informe")]
     public IActionResult GetInforme()
     {
-        List<Informe> informes = lector.AbrirInformes("Datos/informe.json");
-        return Ok(informes);
+        Informe informe = ADInforme.Obtener();
+        return Ok(informe);
     }
 
     [HttpPost("AgregarPedido")]
@@ -40,17 +51,17 @@ public class CadeteriaController : ControllerBase
         {
             return BadRequest("Pedido Invalido");
         }
-        List<Pedido> pedidos = lector.AbrirPedidos("Datos/pedidos.json");
+        List<Pedido> pedidos = ADPedidos.Obtener();
         pedidos.Add(pedido);
-        lector.GuardarArchivoTexto("Datos/pedidos.json", pedidos);
-        return Ok(pedidos);
+        ADPedidos.GuardarPedidos(pedidos);
+        return Created("Pedido creado",pedidos);
     }
 
     [HttpPut("AsignarPedido")]
     public IActionResult AsignarPedido(int idPedido, int idCadete)
     {
-        List<Pedido> pedidos = lector.AbrirPedidos("Datos/pedidos.json");
-        List<Cadete> cadetes = lector.AbrirCadetes("Datos/cadetes.json");
+        List<Pedido> pedidos = ADPedidos.Obtener();
+        List<Cadete> cadetes = ADCadetes.Obtener();
         Pedido pedido = pedidos.Find(x => x.Nro == idPedido);
         Cadete cadete = cadetes.Find(x => x.Id == idCadete);
         if (pedido == null)
@@ -62,14 +73,14 @@ public class CadeteriaController : ControllerBase
             return BadRequest("No se encontro el cadete");
         }
         pedido.Cadete = cadete;
-        lector.GuardarArchivoTexto("Datos/pedidos.json", pedidos);
+        ADPedidos.GuardarPedidos(pedidos);
         return Ok("Pedido asignado");
     }
 
     [HttpPut("CambiarEstadoPedido")]
     public IActionResult CambiarEstadoPedido(int idPedido, bool estado)
     {
-        List<Pedido> pedidos = lector.AbrirPedidos("Datos/pedidos.json");
+        List<Pedido> pedidos = ADPedidos.Obtener();
         if (pedidos == null)
         {
             return StatusCode(500, "Error del servidor");
@@ -80,7 +91,7 @@ public class CadeteriaController : ControllerBase
             return BadRequest("No se encontro el pedido");            
         }
         pedido.Entregado = estado;
-        lector.GuardarArchivoTexto("Datos/pedidos.json",pedidos);
+        ADPedidos.GuardarPedidos(pedidos);
         return Ok("Se cambio el estado del pedido");
     }
 

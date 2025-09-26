@@ -215,23 +215,19 @@ public class Cadeteria
 public class Informe
 {
     Cadeteria cadeteria;
-    List<Cadete> cadetes;
     List<Pedido> pedidosCompletados;
     Dictionary<string, double> sueldos;
     public Cadeteria Cadeteria { get => cadeteria; set => cadeteria = value; }
-    public List<Cadete> Cadetes { get => cadetes; }
     public List<Pedido> PedidosCompletados { get => pedidosCompletados; }
     public Dictionary<string, double> Sueldos { get => sueldos; }
-
     public Informe(Cadeteria cadeteria)
     {
         this.cadeteria = cadeteria;
-        this.cadetes = cadeteria.ListadoCadetes;
-        this.pedidosCompletados = cadeteria.ListadoPedidos.FindAll(pedido => pedido.Entregado == true);
-        foreach (Cadete cadete in cadetes)
+        this.pedidosCompletados = cadeteria.ListadoPedidos.FindAll(pedido => pedido.Entregado);
+        foreach (Cadete cadete in cadeteria.ListadoCadetes)
         {
-            this.sueldos[cadete.Nombre] = cadeteria.CalcularSueldo(cadete, this.pedidosCompletados);
+            this.sueldos.Add(cadete.Nombre, cadeteria.CalcularSueldo(cadete, this.pedidosCompletados));
         }
-        
+
     }
 }
