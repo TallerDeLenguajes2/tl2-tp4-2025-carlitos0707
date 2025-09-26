@@ -29,8 +29,8 @@ public class CadeteriaController : ControllerBase
     [HttpGet("Informe")]
     public IActionResult GetInforme()
     {
-        List<Informe> informes = lector.AbrirInformes("Datos/informe.json");
-        return Ok(informes);
+        Informe informe = lector.AbrirInformes("Datos/informe.json");
+        return Ok(informe);
     }
 
     [HttpPost("AgregarPedido")]

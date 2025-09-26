@@ -223,6 +223,10 @@ public class Informe
     public List<Pedido> PedidosCompletados { get => pedidosCompletados; }
     public Dictionary<string, double> Sueldos { get => sueldos; }
 
+    public Informe()
+    {
+        
+    }
     public Informe(Cadeteria cadeteria)
     {
         this.cadeteria = cadeteria;
@@ -232,6 +236,6 @@ public class Informe
         {
             this.sueldos[cadete.Nombre] = cadeteria.CalcularSueldo(cadete, this.pedidosCompletados);
         }
-        
+
     }
 }

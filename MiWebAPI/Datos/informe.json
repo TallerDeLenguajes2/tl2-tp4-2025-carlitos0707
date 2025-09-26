@@ -1,28 +1,50 @@
 {
     "Cadeteria": {
         "Nombre": "Cadetería Tucumán",
-        "Telefono": 3811234567
+        "Telefono": 3811234567,
+        "ListadoCadetes": [
+                            {
+                                "Id": 1,
+                                "Nombre": "Juan Pérez",
+                                "Direccion": "Av. Siempre Viva 123",
+                                "Telefono": 3811111111
+                            },
+                            {
+                                "Id": 2,
+                                "Nombre": "María López",
+                                "Direccion": "Calle San Martín 456",
+                                "Telefono": 3812222222
+                            },
+                            {
+                                "Id": 3,
+                                "Nombre": "Carlos Gómez",
+                                "Direccion": "Belgrano 789",
+                                "Telefono": 3813333333
+                            }
+                        ],
+        "ListadoPedidos": [{"Nro":200,"Entregado":true,"Obs":"Observaci\u00F3n del pedido 1","Cliente":{"Nombre":"Ana Torres","Direccion":"Mitre 321","Telefono":3814444444,"DatosReferenciaDireccion":"Frente a la plaza"},"Cadete":{"Id":0,"Nombre":"Juan P\u00E9rez","Direccion":null,"Telefono":0}},{"Nro":201,"Entregado":true,"Obs":"Observaci\u00F3n del pedido 2","Cliente":{"Nombre":"Luis Mart\u00EDnez","Direccion":"San Juan 654","Telefono":3815555555,"DatosReferenciaDireccion":"Casa con rejas verdes"},"Cadete":{"Id":0,"Nombre":"Carlos G\u00F3mez","Direccion":null,"Telefono":0}},{"Nro":202,"Entregado":true,"Obs":"Observaci\u00F3n del pedido 3","Cliente":{"Nombre":"Carolina D\u00EDaz","Direccion":"Catamarca 987","Telefono":3816666666,"DatosReferenciaDireccion":"Edificio rojo, piso 2"},"Cadete":{"Id":0,"Nombre":"Juan P\u00E9rez","Direccion":null,"Telefono":0}},{"Nro":203,"Entregado":false,"Obs":"Observaci\u00F3n del pedido 4","Cliente":{"Nombre":"Pedro Gonz\u00E1lez","Direccion":"Av. Sarmiento 123","Telefono":3817777777,"DatosReferenciaDireccion":"Esquina con sem\u00E1foro"},"Cadete":{"Id":0,"Nombre":"Mar\u00EDa L\u00F3pez","Direccion":null,"Telefono":0}},{"Nro":204,"Entregado":true,"Obs":"Observaci\u00F3n del pedido 5","Cliente":{"Nombre":"Sof\u00EDa Ram\u00EDrez","Direccion":"25 de Mayo 456","Telefono":3818888888,"DatosReferenciaDireccion":"Puerta azul"},"Cadete":{"Id":0,"Nombre":"Juan P\u00E9rez","Direccion":null,"Telefono":0}},{"Nro":205,"Entregado":false,"Obs":"Observaci\u00F3n del pedido 6","Cliente":{"Nombre":"Diego Fern\u00E1ndez","Direccion":"Rivadavia 789","Telefono":3819999999,"DatosReferenciaDireccion":"Al lado del banco"},"Cadete":null},{"Nro":206,"Entregado":false,"Obs":"Observaci\u00F3n del pedido 7","Cliente":{"Nombre":"Marta Herrera","Direccion":"Maip\u00FA 111","Telefono":3811231234,"DatosReferenciaDireccion":"Frente a la iglesia"},"Cadete":null},{"Nro":207,"Entregado":false,"Obs":"Observaci\u00F3n del pedido 8","Cliente":{"Nombre":"Javier Castro","Direccion":"San Lorenzo 222","Telefono":3812342345,"DatosReferenciaDireccion":"Casa con port\u00F3n negro"},"Cadete":null},{"Nro":208,"Entregado":false,"Obs":"Observaci\u00F3n del pedido 9","Cliente":{"Nombre":"Valeria Ortiz","Direccion":"C\u00F3rdoba 333","Telefono":3813453456,"DatosReferenciaDireccion":"Depto B, piso 1"},"Cadete":null},{"Nro":209,"Entregado":true,"Obs":"Observaci\u00F3n del pedido 10","Cliente":{"Nombre":"Ricardo Silva","Direccion":"Santa Fe 444","Telefono":3814564567,"DatosReferenciaDireccion":"Local de ropa"},"Cadete":null},{"Nro":99,"Entregado":false,"Obs":"string","Cliente":{"Nombre":"string","Direccion":"string","Telefono":0,"DatosReferenciaDireccion":"string"},"Cadete":{"Id":1,"Nombre":"Juan P\u00E9rez","Direccion":"Av. Siempre Viva 123","Telefono":3811111111}}]
+
     },
     "Cadetes": [
-        {
-            "Id": 1,
-            "Nombre": "Juan Pérez",
-            "PedidosEntregados": 2,
-            "MontoGanado": 1000
-        },
-        {
-            "Id": 2,
-            "Nombre": "María López",
-            "PedidosEntregados": 1,
-            "MontoGanado": 500
-        },
-        {
-            "Id": 3,
-            "Nombre": "Carlos Gómez",
-            "PedidosEntregados": 0,
-            "MontoGanado": 0
-        }
-    ],
+                    {
+                        "Id": 1,
+                        "Nombre": "Juan Pérez",
+                        "Direccion": "Av. Siempre Viva 123",
+                        "Telefono": 3811111111
+                    },
+                    {
+                        "Id": 2,
+                        "Nombre": "María López",
+                        "Direccion": "Calle San Martín 456",
+                        "Telefono": 3812222222
+                    },
+                    {
+                        "Id": 3,
+                        "Nombre": "Carlos Gómez",
+                        "Direccion": "Belgrano 789",
+                        "Telefono": 3813333333
+                    }
+                ],
     "PedidosCompletados": [
         {
             "Nro": 101,
